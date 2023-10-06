@@ -29,7 +29,7 @@
 - [discord.gg/oxo](https://discord.gg/oxo)
 
 ### Get in Touch
-- 📧 Email: [your.email@example.com](mailto:samueloxooo@gmail.com)
+- 📧 Email: [samueloxooo@gmail.com](mailto:samueloxooo@gmail.com)
 - 🐦 Twitter: [@okisooo_](https://twitter.com/your-twitter-handle)
 - 📷 Instagram: [@okisooo_](https://instagram.com/okisooo_)
 
