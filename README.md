@@ -25,6 +25,7 @@
 ### About Me
 - JavaScript, CSS, HTML, Python, C#, and C++
 - Aspiring Game Developer
+- Discord Bot Developer
 - [oxonet.me](https://oxonet.me)
 - [discord.gg/oxo](https://discord.gg/oxo)
 
