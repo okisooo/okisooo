@@ -29,8 +29,8 @@
 - [discord.gg/oxo](https://discord.gg/oxo)
 
 ### Get in Touch
-- 📧 Email: [samueloxooo@gmail.com](mailto:samueloxooo@gmail.com)
-- 🐦 Twitter: [@okisooo_](https://twitter.com/your-twitter-handle)
-- 📷 Instagram: [@okisooo_](https://instagram.com/okisooo_)
+- 📧 [Email](mailto:samueloxooo@gmail.com)
+- 🐦 [Twitter](https://twitter.com/your-twitter-handle)
+- 📷 [Instagram](https://instagram.com/okisooo_)
 
 I hope to be someone someday!
