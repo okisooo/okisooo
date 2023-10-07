@@ -31,7 +31,7 @@
 
 ### Get in Touch
 - 📧 [Email](mailto:samueloxooo@gmail.com)
-- 🐦 [Twitter](https://twitter.com/your-twitter-handle)
+- 🐦 [Twitter](https://twitter.com/okisooo_)
 - 📷 [Instagram](https://instagram.com/okisooo_)
 
 I hope to be someone someday!
