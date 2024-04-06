@@ -22,16 +22,12 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣷⠀⠀⠐⢶⣶⣶⣶⣶⣾⣿⡀⠀⠀⢶⡶⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣧⣀⣠⡿⠁⠀⠀⠀⠀⢹⣇⡀⣠⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠙⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+![okisooo's GitHub stats](https://stats-six-kappa.vercel.app/api?username=okisooo&show_icons=true&theme=radical)
+
 ### About Me
 - JavaScript, CSS, HTML, Python, C#, and C++
 - Aspiring Game Developer
 - Discord Bot Developer
 - [oxonet.me](https://oxonet.me)
 - [discord.gg/oxo](https://discord.gg/oxo)
-
-### Get in Touch
-- 📧 [Email](mailto:samueloxooo@gmail.com)
-- 🐦 [Twitter](https://twitter.com/okisooo_)
-- 📷 [Instagram](https://instagram.com/okisooo_)
-
-I hope to be someone someday!
