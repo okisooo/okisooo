@@ -1,6 +1,3 @@
-[![Discord Presence](https://lanyard.cnrad.dev/api/274178934143451137?theme=light&showDisplayName=true&borderRadius=20px&bg=ffffff&idleMessage=chillin')](https://discord.com/users/274178934143451137) 
-
----
 ![](./profile-3d-contrib/profile-green-animate.svg)
 
 ---
