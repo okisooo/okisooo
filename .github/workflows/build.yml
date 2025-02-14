@@ -56,7 +56,7 @@ jobs:
           plugin_anilist_limit: 1
 
       - name: Favorites characters
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34
         with:
           filename: metrics.plugin.anilist.characters.svg
           token: NOT_NEEDED
