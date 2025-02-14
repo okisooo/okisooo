@@ -24,6 +24,8 @@ jobs:
           git fetch origin
           if ! git ls-remote --exit-code origin dist; then
             git checkout --orphan dist
+            git config user.email "github-actions@github.com"
+            git config user.name "GitHub Actions"
             git rm -rf .
             echo "Initial commit for dist branch" > README.md
             git add README.md
