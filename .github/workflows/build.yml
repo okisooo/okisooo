@@ -27,6 +27,7 @@ jobs:
             git config user.email "github-actions@github.com"
             git config user.name "GitHub Actions"
             git rm -rf .
+            mkdir -p metrics
             echo "Initial commit for dist branch" > README.md
             git add README.md
             git commit -m "Initial commit for dist branch"
@@ -35,9 +36,13 @@ jobs:
             git checkout dist
           fi
 
+      - name: Ensure metrics folder exists
+        run: mkdir -p metrics
+
       - name: Run Metrics
         uses: lowlighter/metrics@latest
         with:
+          filename: metrics/metrics.svg
           token: ${{ secrets.ACCESS_TOKEN }}
           output_action: commit
           committer_branch: dist
@@ -63,7 +68,7 @@ jobs:
       - name: Favorites anime and currently watching
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.anilist.svg
+          filename: metrics/metrics.plugin.anilist.svg
           token: NOT_NEEDED
           base: ""
           plugin_anilist: yes
@@ -75,7 +80,7 @@ jobs:
       - name: Favorites characters
         uses: lowlighter/metrics@v3.34
         with:
-          filename: metrics.plugin.anilist.characters.svg
+          filename: metrics/metrics.plugin.anilist.characters.svg
           token: NOT_NEEDED
           base: ""
           plugin_anilist: yes
@@ -86,7 +91,7 @@ jobs:
       - name: Favorites mix (anime and characters)
         uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.anilist.mix.svg
+          filename: metrics/metrics.plugin.anilist.mix.svg
           token: NOT_NEEDED
           base: ""
           plugin_anilist: yes
