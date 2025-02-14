@@ -1,54 +1,19 @@
-name: Build
-
+name: Metrics
 on:
-  schedule:
-    - cron: "*/5 * * * *"
+  # Schedule daily updates
+  schedule: [{cron: "0 0 * * *"}]
+  # (optional) Run workflow manually
   workflow_dispatch:
-
-permissions:
-  contents: write
-
+  # (optional) Run workflow when pushing on master/main
+  push: {branches: ["master", "main"]}
 jobs:
-  stats:
+  github-metrics:
     runs-on: ubuntu-latest
-
+    environment: 
+      name: production
+    permissions:
+      contents: write
     steps:
-    - uses: actions/checkout@v4
-
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-        architecture: 'x64'
-        cache: 'pip'
-
-    - name: Install requirements
-      run: |
-        python3 -m pip install --upgrade pip setuptools wheel
-        python3 -m pip install -r requirements.txt
-
-    - name: Generate images
-      run: |
-        git pull
-        python3 generate_images.py
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        EXCLUDE_FORKED_REPOS: true
-
-    - name: Commit stats images
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
-        git commit -m 'Update stats images' || true
-        git push --force
-
-  activity:
-    needs: stats
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: jamesgeorge007/github-activity-readme@v0.4.4
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
