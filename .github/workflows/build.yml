@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      discussions: write
+      issues: write
+      packages: write
+      pull-requests: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
