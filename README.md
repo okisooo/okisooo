@@ -11,8 +11,8 @@
 
 <!-- AniList Plugins -->
 
-![AniList Favorites](https://raw.githubusercontent.com/okisooo/okisooo/dist/metrics/metrics.plugin.anilist.svg)
+![AniList Favorites](https://raw.githubusercontent.com/okisooo/okisooo/metrics/metrics.plugin.anilist.svg)
 
-![AniList Characters](https://raw.githubusercontent.com/okisooo/okisooo/dist/metrics/metrics.plugin.anilist.characters.svg)
+![AniList Characters](https://raw.githubusercontent.com/okisooo/okisooo/metrics/metrics.plugin.anilist.characters.svg)
 
-![AniList Mix](https://raw.githubusercontent.com/okisooo/okisooo/dist/metrics/metrics.plugin.anilist.mix.svg)
+![AniList Mix](https://raw.githubusercontent.com/okisooo/okisooo/metrics/metrics.plugin.anilist.mix.svg)
