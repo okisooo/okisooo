@@ -43,7 +43,7 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           filename: metrics/metrics.svg
-          token: ${{ secrets.ACCESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           output_action: commit
           committer_branch: dist
           committer_message: "[Skip CI] Updating Metrics Picture"
