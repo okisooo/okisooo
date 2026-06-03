@@ -1,7 +1,7 @@
 <!-- Other existing badges -->
 <img src="https://osu-sig.s23.moe/card?user=oxo7&mode=std&lang=en&mini=true&animation=true" align="right">
 
-[![Discord Presence](https://lanyard.cnrad.dev/api/274178934143451137?theme=light&bg=ffffff&borderRadius=10px)](https://discord.com/users/274178934143451137)
+[![Discord Presence](https://lanyard-profile-readme.vercel.app/api/274178934143451137?theme=light&bg=ffffff&borderRadius=10px)](https://discord.com/users/274178934143451137)
 
 ![](https://count.getloli.com/@okisooo)
 
