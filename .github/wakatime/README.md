@@ -1,6 +1,13 @@
 # WakaTime OAuth for profile Metrics
 
-The account-specific notice retires API-key reads on November 1, 2026. Editor
+WakaTime retracted the account-specific deprecation email at 12:33 UTC on
+October 13, 2026 and said IDE-plugin users need no action. The earlier
+November 1, 2026 deadline for this account is unconfirmed.
+
+This migration follows the [current authentication documentation](https://wakatime.com/developers/#authentication),
+which limits write-only API keys to plugin activity ingestion and requires OAuth
+for apps, scripts, and integrations. This GitHub Metrics workflow reads stats;
+the plugin API-key examples do not authorize stats-consumer reads. Editor
 heartbeats continue using their existing API key. Nothing here changes editor
 configuration, revokes that key, or requests heartbeat access.
 
@@ -57,11 +64,15 @@ configuration change. Do not trigger production runs from this draft PR.
 
 ## Renewal and recovery
 
-[WakaTime's OAuth documentation](https://wakatime.com/developers#authentication)
-specifies Bearer headers, refresh-token exchange, and 365-day authorization-code
-tokens. The daily job reuses its access token, refreshes within seven days of
-expiry (or once after a 401), and includes `client_id`, `client_secret`,
-`redirect_uri`, `grant_type=refresh_token`, and the previous refresh token.
+[WakaTime's OAuth documentation](https://wakatime.com/developers/#authentication),
+checked October 13, 2026, specifies Bearer headers, refresh-token exchange, and
+a 100-year lifetime for authorization-code tokens. The workflow determines
+expiry from the token response's `expires_at` or `expires_in`; it does not
+hardcode the advertised lifetime. The daily job reuses its access token,
+refreshes within seven days of that returned expiry (or once after a 401), and
+includes `client_id`, `client_secret`, `redirect_uri`, `grant_type=refresh_token`,
+and the previous refresh token. One-year values in tests are simulated token
+responses, not a runtime expiry assumption.
 
 Rotated access and refresh tokens are encrypted and committed **before** the
 stats request or renderer runs. AES-GCM authenticates the state and binds it to
