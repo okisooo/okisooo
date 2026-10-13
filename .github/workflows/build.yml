@@ -4,10 +4,14 @@ on:
   schedule: [{ cron: "0 0 * * *" }]
   # Allow manual triggering
   workflow_dispatch:
-  # Run on every push (no branch filter)
-  push: { branches: [] }
+  # Review branches must not publish profile images or rotate credentials.
+  push: { branches: [main] }
+concurrency:
+  group: metrics-dist
+  cancel-in-progress: false
 jobs:
   github-metrics:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,31 +21,47 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: Create "dist" branch if it doesn't exist
         run: |
           git fetch origin
           if ! git ls-remote --exit-code origin dist; then
-            git checkout --orphan dist
-            git config user.email "github-actions@github.com"
-            git config user.name "GitHub Actions"
-            git rm -rf .
-            mkdir -p metrics
-            echo "Initial commit for dist branch" > README.md
-            git add README.md
-            git commit -m "Initial commit for dist branch"
-            git push origin dist
-          else
-            git checkout dist
+            git push origin HEAD:refs/heads/dist
           fi
 
-      - name: Ensure metrics folder exists
-        run: mkdir -p metrics
+      - name: Prepare WakaTime OAuth and verify 30-day stats
+        id: wakatime
+        run: node .github/wakatime/oauth.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WAKATIME_CLIENT_ID: ${{ vars.WAKATIME_CLIENT_ID }}
+          WAKATIME_REDIRECT_URI: ${{ vars.WAKATIME_REDIRECT_URI }}
+          WAKATIME_CLIENT_SECRET: ${{ secrets.WAKATIME_CLIENT_SECRET }}
+          WAKATIME_STATE_KEY: ${{ secrets.WAKATIME_STATE_KEY }}
+          WAKATIME_OAUTH_INITIAL_TOKEN: ${{ secrets.WAKATIME_OAUTH_INITIAL_TOKEN }}
+
+      - name: Checkout pinned Metrics action
+        uses: actions/checkout@v4
+        with:
+          repository: lowlighter/metrics
+          ref: 65836723097537a54cd8eb90f61839426b4266b6 # upstream latest / v3.34
+          path: .metrics-action
+          persist-credentials: false
+
+      - name: Prepare the existing renderer with OAuth authentication
+        run: docker build -t metrics:forked-3.34.0 .github/wakatime
 
       - name: Run Metrics
-        uses: lowlighter/metrics@latest
+        uses: ./.metrics-action
         with:
+          use_prebuilt_image: no
+          plugins_errors_fatal: yes
           filename: metrics/metrics.svg
           token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
           output_action: commit
@@ -53,7 +73,7 @@ jobs:
           config_timezone: Asia/Tokyo
           plugin_achievements: no
           plugin_wakatime: yes
-          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
+          plugin_wakatime_token: ${{ steps.wakatime.outputs.access_token }}
           plugin_wakatime_days: 30
           plugin_wakatime_limit: 5
           plugin_wakatime_repositories_visibility: all
@@ -62,6 +82,7 @@ jobs:
           plugin_wakatime_user: current
 
       - name: Favorites anime and currently watching
+        if: ${{ !cancelled() }}
         uses: lowlighter/metrics@latest
         with:
           filename: metrics/metrics.plugin.anilist.svg
@@ -74,6 +95,7 @@ jobs:
           plugin_anilist_limit: 1
 
       - name: Favorites characters
+        if: ${{ !cancelled() }}
         uses: lowlighter/metrics@v3.34
         with:
           filename: metrics/metrics.plugin.anilist.characters.svg
@@ -85,6 +107,7 @@ jobs:
           plugin_anilist_limit_characters: 22
 
       - name: Favorites mix (anime and characters)
+        if: ${{ !cancelled() }}
         uses: lowlighter/metrics@latest
         with:
           filename: metrics/metrics.plugin.anilist.mix.svg
