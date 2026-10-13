@@ -11,6 +11,7 @@ permissions:
 jobs:
   compatibility:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,6 +29,8 @@ jobs:
           METRICS_PLUGIN_SOURCE="$RUNNER_TEMP/wakatime-upstream.mjs" node --test .github/wakatime/metrics.test.mjs
       - name: Build the OAuth-compatible renderer
         run: docker build -t metrics:forked-3.34.0 .github/wakatime
+      - name: Make the mock avatar self-contained
+        run: docker build -f .github/wakatime/Mock.Dockerfile -t metrics:forked-3.34.0 .github/wakatime
       - name: Checkout the production Metrics launcher
         uses: actions/checkout@v4
         with:
@@ -40,6 +43,9 @@ jobs:
         with:
           use_prebuilt_image: no
           use_mocked_data: yes
+          retries: 1
+          retries_delay: 0
+          debug: yes
           output_action: none
           token: MOCKED_TOKEN
           user: okisooo
