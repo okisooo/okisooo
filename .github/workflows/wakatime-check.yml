@@ -28,6 +28,26 @@ jobs:
           METRICS_PLUGIN_SOURCE="$RUNNER_TEMP/wakatime-upstream.mjs" node --test .github/wakatime/metrics.test.mjs
       - name: Build the OAuth-compatible renderer
         run: docker build -t metrics:forked-3.34.0 .github/wakatime
+      - name: Checkout the production Metrics launcher
+        uses: actions/checkout@v4
+        with:
+          repository: lowlighter/metrics
+          ref: 65836723097537a54cd8eb90f61839426b4266b6
+          path: .metrics-action
+          persist-credentials: false
+      - name: Verify the local launcher uses the prepared renderer
+        uses: ./.metrics-action
+        with:
+          use_prebuilt_image: no
+          use_mocked_data: yes
+          output_action: none
+          token: MOCKED_TOKEN
+          user: okisooo
+          filename: launcher.svg
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Tokyo
+      - name: Verify launcher output
+        run: test -s /metrics_renders/launcher.svg
       - name: Smoke-test unchanged rendering with upstream mock data
         run: |
           mkdir -p "$RUNNER_TEMP/wakatime-renders"

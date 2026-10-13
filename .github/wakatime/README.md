@@ -92,7 +92,9 @@ compatibility. All credentials used by these tests are fake.
 
 The PR check also extracts the actual plugin from the pinned image, checks it,
 builds the small derived image, and smoke-renders the existing configuration
-with upstream mocked data and Docker networking disabled. It cannot validate
+with upstream mocked data and Docker networking disabled. It also executes the
+pinned local composite launcher with mocked base data and no commit output.
+It cannot validate
 the user's live grant until the separate activation approval is given.
 
 When updating Metrics, review the image digest, the pinned action commit/version,
