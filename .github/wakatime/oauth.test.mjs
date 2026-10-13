@@ -43,7 +43,7 @@ test("bootstrap saves only ciphertext before reading 30-day stats with Bearer au
     const encrypted = Buffer.from(body.content, "base64").toString("utf8")
     assert.deepEqual(unseal(encrypted, env.WAKATIME_STATE_KEY, env.GITHUB_REPOSITORY), original)
     assert.ok(!call.body.includes("fake-refresh"))
-    return reply(201)
+    return reply(201, {content: {sha: "bootstrap-sha"}})
   }, call => {
     assert.equal(call.url, "https://wakatime.com/api/v1/users/current/stats/last_30_days")
     assert.equal(call.headers.Authorization, "Bearer fake-access")
@@ -77,7 +77,7 @@ test("expiry refresh includes redirect URI and preserves rotated refresh before 
     const state = unseal(Buffer.from(body.content, "base64").toString("utf8"), env.WAKATIME_STATE_KEY, env.GITHUB_REPOSITORY)
     assert.equal(state.refresh_token, renewed.refresh_token)
     assert.equal(state.scope, original.scope)
-    return reply(200)
+    return reply(200, {content: {sha: "renewed-sha"}})
   }, call => {
     assert.equal(call.headers.Authorization, "Bearer fake-new-access")
     return reply(200, stats)
@@ -87,9 +87,18 @@ test("expiry refresh includes redirect URI and preserves rotated refresh before 
 
 test("unexpected 401 refreshes once and retries with the new token", async () => {
   const h = harness([reply(200, saved(original)), reply(401), reply(200, {...original, access_token: "fake-new-access"}),
-    reply(200), reply(200, stats)])
+    reply(200, {content: {sha: "renewed-sha"}}), reply(200, stats)])
   assert.equal(await prepareOAuth(env, h), "fake-new-access")
   assert.equal(h.calls.filter(call => call.url.endsWith("/oauth/token")).length, 1)
+})
+
+test("bootstrap followed by a 401 updates the newly created state's SHA", async () => {
+  const h = harness([reply(404), reply(201, {content: {sha: "bootstrap-sha"}}), reply(401),
+    reply(200, {...original, access_token: "fake-new-access"}), call => {
+      assert.equal(JSON.parse(call.body).sha, "bootstrap-sha")
+      return reply(200, {content: {sha: "renewed-sha"}})
+    }, reply(200, stats)])
+  assert.equal(await prepareOAuth({...env, WAKATIME_OAUTH_INITIAL_TOKEN: JSON.stringify(original)}, h), "fake-new-access")
 })
 
 test("a lost successful state-save response is recovered by ciphertext equality", async () => {

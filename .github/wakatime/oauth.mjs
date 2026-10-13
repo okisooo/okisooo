@@ -125,14 +125,24 @@ export async function prepareOAuth(env, {fetcher = fetch, now = Date.now(), mask
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
         const response = await request(fetcher, contents, {method: "PUT", headers: githubHeaders, body}, "OAuth state save")
-        if (response.ok) { dirty = false; return }
+        if (response.ok) {
+          const saved = await json(response, "OAuth state save")
+          if (!saved.content?.sha) throw new Error("OAuth state save returned no file SHA")
+          sha = saved.content.sha
+          dirty = false
+          return
+        }
         // A prior PUT may have succeeded even if its response was lost.
         failure = new Error(`OAuth state save failed (HTTP ${response.status}); restore/regrant if rotation was lost`)
       } catch (error) { failure = error }
       const check = await request(fetcher, `${contents}?ref=dist`, {headers: githubHeaders}, "OAuth state save verification")
       if (check.ok) {
         const saved = await json(check, "OAuth state save verification")
-        if (Buffer.from(saved.content, "base64").toString("utf8") === encrypted) { dirty = false; return }
+        if (Buffer.from(saved.content, "base64").toString("utf8") === encrypted) {
+          sha = saved.sha
+          dirty = false
+          return
+        }
         if (saved.sha !== sha) throw new Error("OAuth state changed concurrently; inspect state before recovery")
       }
     }
