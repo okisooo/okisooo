@@ -157,3 +157,24 @@ test("invalid refresh JSON is redacted and omitted refresh tokens retain the pre
   assert.throws(() => tokenState({...original, scope: "email"}), /missing.*scopes/)
   assert.throws(() => tokenState({access_token: "missing-refresh", expires_in: 31536000}), /Invalid OAuth/)
 })
+
+test("access-token validation rejects exactly ECMAScript whitespace without a regex", () => {
+  const whitespace = new Set([0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x20, 0xa0, 0x1680,
+    0x2000, 0x2001, 0x2002, 0x2003, 0x2004, 0x2005, 0x2006, 0x2007, 0x2008, 0x2009,
+    0x200a, 0x2028, 0x2029, 0x202f, 0x205f, 0x3000, 0xfeff])
+  // Exhaustive BMP coverage includes former whitespace and zero-width negative cases.
+  for (let codePoint = 0; codePoint <= 0xffff; codePoint++) {
+    const access_token = `fake${String.fromCodePoint(codePoint)}access`
+    if (whitespace.has(codePoint)) assert.throws(() => tokenState({...original, access_token}), /Invalid OAuth/)
+    else assert.equal(tokenState({...original, access_token}).access_token, access_token)
+  }
+  for (const codePoint of whitespace) {
+    const character = String.fromCodePoint(codePoint)
+    for (const access_token of [`${character}fake`, `fake${character}`])
+      assert.throws(() => tokenState({...original, access_token}), /Invalid OAuth/)
+  }
+  const longToken = "a".repeat(100000)
+  assert.equal(tokenState({...original, access_token: longToken}).access_token.length, longToken.length)
+  assert.throws(() => tokenState({...original, access_token: `${longToken}\n`}), /Invalid OAuth/)
+  assert.equal(tokenState({...original, access_token: "fake😀access"}).access_token, "fake😀access")
+})

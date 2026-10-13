@@ -102,3 +102,21 @@ When updating Metrics, review the image digest, the pinned action commit/version
 the `metrics:forked-3.34.0` tag expected by upstream's local composite action, and
 the compatibility patch together. The unchanged local upstream action finds
 the prepared image and runs it with its normal input/environment handling.
+
+## Codacy regex audit
+
+Codacy issue `45cc8971fc452c2da0793e6455fbc7f` reported Opengrep rule
+`Semgrep_rules_lgpl_javascript_dos_rule-regex-dos` at the access-token whitespace
+check. The original fixed single-character whitespace class had no quantifier,
+alternation, group, or backreference, so it could only scan the input linearly;
+the reported regular-expression denial-of-service path was a false positive.
+Token inputs originate from owner configuration, the fixed WakaTime OAuth endpoint,
+or authenticated encrypted state; the workflow exposes no public token-input API.
+
+The validator now uses one pass over characters and tests whether each character's
+native `trim()` result is empty. This preserves the exact whitespace definition:
+both [regular-expression whitespace](https://tc39.es/ecma262/multipage/text-processing.html#sec-characterclassescape)
+and [trim](https://tc39.es/ecma262/multipage/text-processing.html#sec-trimstring)
+use ECMAScript's WhiteSpace and LineTerminator productions. Tests cover every BMP
+code point, leading/trailing whitespace, supplementary characters, and long input.
+No scanner rule, severity, file, or finding is suppressed.

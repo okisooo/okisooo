@@ -13,11 +13,18 @@ function keyBytes(key) {
   return bytes
 }
 
+function hasWhitespace(value) {
+  // trim and RegExp whitespace share ECMAScript's WhiteSpace + LineTerminator set.
+  for (const character of value)
+    if (character.trim().length === 0) return true
+  return false
+}
+
 export function tokenState(token, now = Date.now(), previous = {}) {
   const expiresAt = token.expires_at
     ? Date.parse(token.expires_at)
     : now + Number(token.expires_in) * 1000
-  if (typeof token.access_token !== "string" || !token.access_token || /\s/.test(token.access_token)
+  if (typeof token.access_token !== "string" || !token.access_token || hasWhitespace(token.access_token)
     || typeof (token.refresh_token ?? previous.refresh_token) !== "string"
     || !(token.refresh_token ?? previous.refresh_token) || !Number.isFinite(expiresAt)
     || (token.token_type && token.token_type.toLowerCase() !== "bearer"))
