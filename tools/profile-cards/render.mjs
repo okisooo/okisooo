@@ -85,7 +85,7 @@ export async function renderCard(name, snapshot, opts = {}) {
   } else if (name === 'anime' || name === 'characters') {
     const characters = name === 'characters';
     const entries = (characters ? data?.characters : data?.entries)?.slice(0, options.count) || [];
-    height = characters ? 308 : 425;
+    height = characters ? (entries.length > 6 ? 380 : 360) : (entries.length > 3 ? 500 : 425);
     const n = Math.max(entries.length, 1);
     const thumbWidth = characters ? Math.min(132, Math.floor((844 - (n - 1) * 12) / n)) : Math.min(260, Math.floor((844 - (n - 1) * 18) / n));
     const imageHeight = characters ? 157 : 252;
@@ -93,7 +93,7 @@ export async function renderCard(name, snapshot, opts = {}) {
       section(characters ? 'favorite characters' : 'anime shelf', characters ? 'the characters i keep coming back to' : data?.section || 'my AniList corner', p, accent),
       entries.length ? div({ flexDirection: 'row', gap: characters ? 12 : 18, justifyContent: 'flex-start', alignItems: 'flex-start' }, entries.map(entry => div({ width: thumbWidth, gap: 9 },
         img(entry.imageData, thumbWidth, imageHeight, { borderRadius: 5 }),
-        text(trim(entry.name, characters ? 18 : 36), { fontSize: characters ? 12 : 16, fontWeight: 700, lineHeight: 1.2 })
+        text(trim(entry.name, characters ? 18 : 36), { fontSize: characters ? 14 : 16, fontWeight: 700, lineHeight: 1.2 })
       ))) : div({ height: imageHeight, flexDirection: 'row', alignItems: 'center', gap: 22 }, img(assets.mascot, 140, 140, { objectFit: 'contain' }), text('nothing here just yet · my list is on AniList', { color: p.muted, fontSize: 20 })),
       footer(source, p, `anilist.co/user/${config.anilist}`)
     ]);

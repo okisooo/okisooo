@@ -12,6 +12,7 @@ const port = Number(process.env.PORT || 3000);
 export function readme(base, opts = {}) {
   const escapedBase = base.replace(/\/$/, '');
   const params = new URLSearchParams();
+  params.set('v', '2');
   if (opts.accent) params.set('accent', opts.accent.replace('#', ''));
   if (opts.art) params.set('art', opts.art);
   if (opts.count) params.set('count', opts.count);

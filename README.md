@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/banner.svg?theme=dark">
-  <img src="https://profile.oki.so/banner.svg?theme=light" alt="OKISO — original music, art and my little corner" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/banner.svg?theme=dark&v=2">
+  <img src="https://profile.oki.so/banner.svg?theme=light&v=2" alt="OKISO — original music, art and my little corner" width="900">
 </picture>
 
 <div align="center">
@@ -14,32 +14,32 @@ music, art & little things i make ♡
 </div>
 
 <a href="https://discord.com/users/274178934143451137"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/presence.svg?theme=dark">
-  <img src="https://profile.oki.so/presence.svg?theme=light" alt="My Discord presence snapshot" width="48%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/presence.svg?theme=dark&v=2">
+  <img src="https://profile.oki.so/presence.svg?theme=light&v=2" alt="My Discord presence snapshot" width="48%">
 </picture></a>
 <a href="https://osu.ppy.sh/users/oxo7"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/osu.svg?theme=dark">
-  <img src="https://profile.oki.so/osu.svg?theme=light" alt="My osu! profile signature" width="48%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/osu.svg?theme=dark&v=2">
+  <img src="https://profile.oki.so/osu.svg?theme=light&v=2" alt="My osu! profile signature" width="48%">
 </picture></a>
 
 <a href="https://anilist.co/user/okiso"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/anime.svg?theme=dark">
-  <img src="https://profile.oki.so/anime.svg?theme=light" alt="Anime from my real AniList profile" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/anime.svg?theme=dark&v=2">
+  <img src="https://profile.oki.so/anime.svg?theme=light&v=2" alt="Anime from my real AniList profile" width="900">
 </picture></a>
 
 <a href="https://anilist.co/user/okiso/favorites"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/characters.svg?theme=dark">
-  <img src="https://profile.oki.so/characters.svg?theme=light" alt="My favorite characters on AniList" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/characters.svg?theme=dark&v=2">
+  <img src="https://profile.oki.so/characters.svg?theme=light&v=2" alt="My favorite characters on AniList" width="900">
 </picture></a>
 
 <a href="https://oki.so/releases"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/release.svg?theme=dark">
-  <img src="https://profile.oki.so/release.svg?theme=light" alt="My latest music release" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/release.svg?theme=dark&v=2">
+  <img src="https://profile.oki.so/release.svg?theme=light&v=2" alt="My latest music release" width="900">
 </picture></a>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/divider.svg?theme=dark">
-  <img src="https://profile.oki.so/divider.svg?theme=light" alt="little things i make" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/divider.svg?theme=dark&v=2">
+  <img src="https://profile.oki.so/divider.svg?theme=light&v=2" alt="little things i make" width="900">
 </picture>
 
 [fleet](https://github.com/okisooo/fleet) · [codex-backdrop](https://github.com/okisooo/codex-backdrop) · [claude-backdrop](https://github.com/okisooo/claude-backdrop) · [my site](https://github.com/okisooo/site)

@@ -4,6 +4,7 @@ let timer;
 function params() {
   const values = Object.fromEntries(new FormData(controls));
   values.accent = values.accent.replace('#', '');
+  values.v = '2';
   return new URLSearchParams(values);
 }
 function update() {
