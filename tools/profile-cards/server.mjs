@@ -33,14 +33,16 @@ music, art & little things i make ♡
 
 </div>
 
+<p align="center">
 <a href="https://discord.com/users/${config.discord}">${card('presence', 'My Discord presence snapshot', '48%')}</a>
 <a href="https://osu.ppy.sh/users/${config.osu}">${card('osu', 'My osu! profile signature', '48%')}</a>
+</p>
 
-<a href="https://anilist.co/user/${config.anilist}">${card('anime', 'Anime from my real AniList profile', 900)}</a>
+<p><a href="https://anilist.co/user/${config.anilist}">${card('anime', 'Anime from my real AniList profile', 900)}</a></p>
 
-<a href="https://anilist.co/user/${config.anilist}/favorites">${card('characters', 'My favorite characters on AniList', 900)}</a>
+<p><a href="https://anilist.co/user/${config.anilist}/favorites">${card('characters', 'My favorite characters on AniList', 900)}</a></p>
 
-<a href="https://oki.so/releases">${card('release', 'My latest music release', 900)}</a>
+<p><a href="https://oki.so/releases">${card('release', 'My latest music release', 900)}</a></p>
 
 ${card('divider', 'little things i make', 900)}
 
