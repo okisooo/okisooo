@@ -1,0 +1,30 @@
+services:
+  profile-cards:
+    build: .
+    container_name: profile-cards
+    restart: unless-stopped
+    environment:
+      PORT: '3000'
+      PUBLIC_BASE: https://profile.oki.so
+      CACHE_DIR: /app/.cache
+      OSU_CLIENT_ID: ${OSU_CLIENT_ID:-}
+      OSU_CLIENT_SECRET: ${OSU_CLIENT_SECRET:-}
+    volumes:
+      - profile_cards_cache:/app/.cache
+    networks:
+      - caddy_net
+    mem_limit: 512m
+    cpus: '1.0'
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+
+networks:
+  caddy_net:
+    external: true
+    name: okiso-stack_caddy_net
+
+volumes:
+  profile_cards_cache:
