@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>okiso / profile cards</title>
+  <link rel="stylesheet" href="/studio.css">
+  <script src="/studio.js" defer></script>
+</head>
+<body>
+  <header><a class="wordmark" href="https://oki.so">OKISO<span>↗</span></a><span>profile cards / little things for your corner</span><a href="https://github.com/okisooo">github ↗</a></header>
+  <main>
+    <section class="intro"><p class="eyebrow">your artwork. your colors. your little corner.</p><h1>make it<br>feel like you<span>↗</span></h1><p>matching cards for anime, music, games & being around. choose a look, then take it to your readme.</p></section>
+    <div class="workbench">
+      <form id="controls" class="controls">
+        <p class="eyebrow">make it yours</p>
+        <label>theme<select name="theme"><option value="light">white & silver</option><option value="dark">graphite & red</option></select></label>
+        <label>accent<input name="accent" type="color" value="#cc0000"></label>
+        <label>banner artwork<select name="art"><option value="suyosuyo">suyosuyo / portrait</option><option value="sobu">sobu / character collage</option></select></label>
+        <label>characters to show<select name="count"><option value="6">6</option><option value="8">8</option><option value="12">12</option><option value="4">4</option></select></label>
+        <label>divider greeting<input name="title" maxlength="55" value="little things i make"></label>
+        <button type="button" id="copy">copy profile markdown ↗</button>
+        <a id="download" href="/readme.md" download="README.md">download readme</a>
+        <p id="feedback" role="status" aria-live="polite"></p>
+        <p class="note">both themes are included in the markdown. changes here only affect your preview and copied links.</p>
+        <details><summary>about these cards</summary><p>art by suyosuyo, sobu · @sobsocks and 7mmchan. anime data comes from your real AniList profile. presence is a cached snapshot; github may cache images for longer.</p></details>
+      </form>
+      <section id="preview" class="preview" aria-label="profile preview">
+        <a href="https://oki.so"><img data-card="banner" alt="OKISO original-art banner"></a>
+        <div class="hello"><h2>hey, i'm okiso ↗</h2><p>music, art & little things i make ♡</p><p><a href="https://oki.so">website ↗</a> · <a href="https://oki.so/releases">music ↗</a> · <a href="https://anilist.co/user/okiso">anilist ↗</a></p></div>
+        <div class="pair"><a href="https://discord.com/users/274178934143451137"><img data-card="presence" alt="Discord presence snapshot"></a><a href="https://osu.ppy.sh/users/oxo7"><img data-card="osu" alt="osu! signature"></a></div>
+        <a href="https://anilist.co/user/okiso"><img data-card="anime" alt="Anime shelf from my actual list"></a>
+        <a href="https://anilist.co/user/okiso/favorites"><img data-card="characters" alt="Favorite characters"></a>
+        <a href="https://oki.so/releases"><img data-card="release" alt="Latest music release"></a>
+        <img data-card="divider" alt="Custom mascot divider">
+        <p class="projects"><a href="https://github.com/okisooo/fleet">fleet ↗</a><a href="https://github.com/okisooo/codex-backdrop">codex-backdrop ↗</a><a href="https://github.com/okisooo/claude-backdrop">claude-backdrop ↗</a></p>
+        <p class="goodbye">see you around ↗ ♡</p>
+      </section>
+    </div>
+  </main>
+  <footer>made for okiso / <a href="https://oki.so">oki.so ↗</a><span>art & little tools, all in one corner</span></footer>
+  <dialog id="markdown-dialog"><form method="dialog"><button aria-label="Close markdown">close ×</button></form><h2>your profile markdown</h2><p>copy this into your github profile readme.</p><textarea id="markdown" readonly aria-label="Profile markdown"></textarea></dialog>
+</body>
+</html>

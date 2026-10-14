@@ -1,0 +1,50 @@
+name: Profile cards
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+  push:
+    branches: [main]
+    paths: ['tools/profile-cards/**', '.github/workflows/profile-cards.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: false
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tools/profile-cards/package-lock.json
+      - uses: actions/cache@v4
+        with:
+          path: tools/profile-cards/.cache
+          key: profile-data-${{ github.run_id }}
+          restore-keys: profile-data-
+      - name: Install and verify the renderer
+        working-directory: tools/profile-cards
+        run: npm ci && npm test
+      - name: Render public profile snapshots
+        working-directory: tools/profile-cards
+        run: |
+          node export.mjs "$RUNNER_TEMP/profile-cards"
+          cp "$RUNNER_TEMP/profile-cards/"*.svg ../../cards/
+      - name: Update only generated cards
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add cards/*.svg
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh profile cards [skip ci]'
+          # Other profile workflows also write to main; preserve their changes.
+          git pull --rebase origin main
+          git push origin HEAD:main

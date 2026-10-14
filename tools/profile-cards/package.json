@@ -1,0 +1,19 @@
+{
+  "name": "okiso-profile-cards",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "refresh": "node refresh.mjs",
+    "export": "node export.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@fontsource/archivo": "^5.2.0",
+    "@fontsource/geist-mono": "^5.2.0",
+    "satori": "0.56.2",
+    "sharp": "0.35.5"
+  },
+  "engines": { "node": ">=22" }
+}
