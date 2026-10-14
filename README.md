@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="cards/banner-dark.svg">
-  <img src="cards/banner-light.svg" alt="OKISO — original music, art and my little corner" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/banner.svg?theme=dark">
+  <img src="https://profile.oki.so/banner.svg?theme=light" alt="OKISO — original music, art and my little corner" width="900">
 </picture>
 
 <div align="center">
@@ -14,32 +14,32 @@ music, art & little things i make ♡
 </div>
 
 <a href="https://discord.com/users/274178934143451137"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="cards/presence-dark.svg">
-  <img src="cards/presence-light.svg" alt="My Discord presence snapshot" width="48%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/presence.svg?theme=dark">
+  <img src="https://profile.oki.so/presence.svg?theme=light" alt="My Discord presence snapshot" width="48%">
 </picture></a>
 <a href="https://osu.ppy.sh/users/oxo7"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="cards/osu-dark.svg">
-  <img src="cards/osu-light.svg" alt="My osu! profile signature" width="48%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/osu.svg?theme=dark">
+  <img src="https://profile.oki.so/osu.svg?theme=light" alt="My osu! profile signature" width="48%">
 </picture></a>
 
 <a href="https://anilist.co/user/okiso"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="cards/anime-dark.svg">
-  <img src="cards/anime-light.svg" alt="Anime from my real AniList profile" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/anime.svg?theme=dark">
+  <img src="https://profile.oki.so/anime.svg?theme=light" alt="Anime from my real AniList profile" width="900">
 </picture></a>
 
 <a href="https://anilist.co/user/okiso/favorites"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="cards/characters-dark.svg">
-  <img src="cards/characters-light.svg" alt="My favorite characters on AniList" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/characters.svg?theme=dark">
+  <img src="https://profile.oki.so/characters.svg?theme=light" alt="My favorite characters on AniList" width="900">
 </picture></a>
 
 <a href="https://oki.so/releases"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="cards/release-dark.svg">
-  <img src="cards/release-light.svg" alt="My latest music release" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/release.svg?theme=dark">
+  <img src="https://profile.oki.so/release.svg?theme=light" alt="My latest music release" width="900">
 </picture></a>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="cards/divider-dark.svg">
-  <img src="cards/divider-light.svg" alt="little things i make" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/divider.svg?theme=dark">
+  <img src="https://profile.oki.so/divider.svg?theme=light" alt="little things i make" width="900">
 </picture>
 
 [fleet](https://github.com/okisooo/fleet) · [codex-backdrop](https://github.com/okisooo/codex-backdrop) · [claude-backdrop](https://github.com/okisooo/claude-backdrop) · [my site](https://github.com/okisooo/site)
@@ -58,6 +58,6 @@ music, art & little things i make ♡
 
 see you around ↗ ♡
 
-<sub>art by suyosuyo, sobu · @sobsocks & 7mmchan · [profile card tools](tools/profile-cards)</sub>
+<sub>art by suyosuyo, sobu · @sobsocks & 7mmchan · [customize these cards](https://profile.oki.so)</sub>
 
 </div>

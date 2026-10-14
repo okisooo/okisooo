@@ -102,7 +102,7 @@ async function release() {
   const releases = JSON.parse(tail.slice(0, end + 1));
   const latest = releases.filter(item => item.releaseDate <= new Date().toISOString().slice(0, 10)).sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))[0];
   if (!latest) throw new Error('no released music');
-  return { name: latest.title, date: latest.releaseDate, type: latest.albumType, imageData: await imageData(latest.img), url: latest.slug ? `${config.website}/release/${latest.slug}` : latest.link };
+  return { name: latest.title, date: latest.releaseDate, type: latest.albumType, imageData: await imageData(latest.img), url: latest.slug ? `${config.website}/releases/${latest.slug}` : latest.link };
 }
 
 export function getSnapshot() { return snapshot; }

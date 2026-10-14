@@ -26,4 +26,4 @@ art: suyosuyo; sobu · @sobsocks; mascot by 7mmchan. artwork remains its creator
 
 on the vps, clone this profile repository to `/home/fedora/profile-cards`, then run `docker compose -f tools/profile-cards/compose.yml up -d --build`. it joins the existing Caddy network without publishing a new host port. Caddy's `profile.oki.so` route is tracked separately in okiso-stack. keep the persistent volume and preserve unrelated live server edits.
 
-the profile also keeps generated svg snapshots in `cards/`, refreshed by its own github workflow every six hours. these assets remain available when the vps is offline. live hosted embeds can be copied from the studio; repository snapshots are used by the main profile until hosting is verified.
+the profile also keeps generated svg snapshots in `cards/`, refreshed by its own github workflow every six hours. these are fallback assets when the vps is offline. live hosted embeds are used by the main profile and can be customized and copied from the studio.
