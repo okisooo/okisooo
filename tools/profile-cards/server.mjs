@@ -34,7 +34,7 @@ i make original music, collect art, and build little tools i want to use.
 
 **[my world ↗](https://oki.so)** · **[listen ↗](https://oki.so/releases)** · [discord](https://discord.com/users/274178934143451137) · [anilist](https://anilist.co/user/okiso)
 
-[backdrop · ai wallpapers](https://github.com/okisooo/backdrop) · [fleet · ai usage](https://github.com/okisooo/fleet) · [practice room](https://nihongo.okiso.net)
+[backdrop · ai wallpapers](https://github.com/okisooo/backdrop) · [fleet · ai usage](https://github.com/okisooo/fleet) · [practice room · japanese practice](https://nihongo.okiso.net)
 
 <sub>[prefer less motion? view the still version](https://github.com/okisooo/okisooo/blob/main/README-static.md)</sub>
 
@@ -68,7 +68,10 @@ my home for original releases, commissioned artwork, and whatever i'm making nex
 | :--- | :--- | :--- |
 | **[backdrop ↗](https://github.com/okisooo/backdrop)** | your own images and animated wallpapers behind claude desktop, codex desktop, and t3 code. blur and contrast controls included. | **[windows download](https://github.com/okisooo/backdrop/releases/latest/download/Backdrop-win-x64.zip)** |
 | **[fleet ↗](https://github.com/okisooo/fleet)** | ai usage, quotas, and reset times in one windows tray app. | **[windows download](https://github.com/okisooo/fleet/releases/latest)** |
-| **[practice room ↗](https://github.com/okisooo/NihongoRevisionSuite)** | short language-practice rounds for reading, writing, listening, and recall. | **[open practice room](https://nihongo.okiso.net)** |
+| **[practice room ↗](https://github.com/okisooo/NihongoRevisionSuite)** | offline japanese practice for reading, handwriting, listening and recall. progress stays on your device. | **[open practice room](https://nihongo.okiso.net)** |
+
+also on my desk: [**OKICRAFT** — a Minecraft modpack with Create automation](https://github.com/okisooo/OKICRAFT) · [**DesktopMateController** — character controls from the Windows tray](https://github.com/okisooo/DesktopMateController).
+
 
 <details>
 <summary>watch backdrop in the real app ♡</summary>
