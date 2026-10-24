@@ -11,6 +11,8 @@ i make original music, collect art, and build little tools i want to use.
 
 **[my world ↗](https://oki.so)** · **[listen ↗](https://oki.so/releases)** · [discord](https://discord.com/users/274178934143451137) · [anilist](https://anilist.co/user/okiso)
 
+[backdrop · ai wallpapers](https://github.com/okisooo/backdrop) · [fleet · ai usage](https://github.com/okisooo/fleet) · [practice room](https://nihongo.okiso.net)
+
 <sub>[prefer less motion? view the still version](https://github.com/okisooo/okisooo/blob/main/README-static.md)</sub>
 
 </div>
