@@ -37,3 +37,5 @@ node tools/profile-cards/build-profile-header.mjs /path/to/header-output
 ```
 
 The header generator also produces PNG previews. It does not change the live card service or its data sources.
+
+`assets/profile/profile-share.png` is the matching custom GitHub preview for this repository's links.

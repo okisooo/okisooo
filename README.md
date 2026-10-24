@@ -21,7 +21,7 @@ i make original music, art, and little tools i want to use.
 
 images and animated gifs behind **claude desktop, codex desktop, and t3 code**, with blur and readability controls. one small windows tray app.
 
-<p><a href="https://github.com/okisooo/backdrop"><picture><img src="https://raw.githubusercontent.com/okisooo/backdrop/main/docs/media/real-app-demo.gif" alt="real claude desktop recording: original app beside an animated backdrop wallpaper, using an empty chat and an unsent sample prompt" width="900"></picture></a></p>
+<p><a href="https://github.com/okisooo/backdrop"><picture><source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/okisooo/backdrop/main/docs/media/real-app-demo.png"><img src="https://raw.githubusercontent.com/okisooo/backdrop/main/docs/media/real-app-demo.gif" alt="real claude desktop recording: original app beside an animated backdrop wallpaper, using an empty chat and an unsent sample prompt" width="900"></picture></a></p>
 
 **[download for windows ↗](https://github.com/okisooo/backdrop/releases/latest/download/Backdrop-win-x64.zip)** · [see how it works](https://github.com/okisooo/backdrop#readme) · [watch the video](https://github.com/okisooo/backdrop/releases/download/v2.0.0/real-app-demo.mp4)
 
