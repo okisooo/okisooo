@@ -27,3 +27,13 @@ art: suyosuyo; sobu · @sobsocks; mascot by 7mmchan. artwork remains its creator
 on the vps, clone this profile repository to `/home/fedora/profile-cards`, then run `docker compose -f tools/profile-cards/compose.yml up -d --build`. it joins the existing Caddy network without publishing a new host port. Caddy's `profile.oki.so` route is tracked separately in okiso-stack. keep the persistent volume and preserve unrelated live server edits.
 
 the profile also keeps generated svg snapshots in `cards/`, refreshed by its own github workflow every six hours. these are fallback assets when the vps is offline. live hosted embeds are used by the main profile and can be customized and copied from the studio.
+
+## profile header artwork
+
+The profile's cream/lavender light banner and plum dark banner are static assets in `assets/profile/`. They use the existing credited artwork and self-contained SVGs with outlined text. Regenerate them with an explicit output directory, then copy the two SVGs into that folder:
+
+```sh
+node tools/profile-cards/build-profile-header.mjs /path/to/header-output
+```
+
+The header generator also produces PNG previews. It does not change the live card service or its data sources.
