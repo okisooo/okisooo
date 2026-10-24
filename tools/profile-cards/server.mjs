@@ -70,7 +70,7 @@ my home for original releases, commissioned artwork, and whatever i'm making nex
 | **[fleet ↗](https://github.com/okisooo/fleet)** | ai usage, quotas, and reset times in one windows tray app. | **[windows download](https://github.com/okisooo/fleet/releases/latest)** |
 | **[practice room ↗](https://github.com/okisooo/NihongoRevisionSuite)** | offline japanese practice for reading, handwriting, listening and recall. progress stays on your device. | **[open practice room](https://nihongo.okiso.net)** |
 
-also on my desk: [**OKICRAFT** — a Minecraft modpack with Create automation](https://github.com/okisooo/OKICRAFT) · [**DesktopMateController** — character controls from the Windows tray](https://github.com/okisooo/DesktopMateController).
+also on my desk: [**OKICRAFT** — a Minecraft modpack with Create automation](https://github.com/okisooo/OKICRAFT).
 
 
 <details>
