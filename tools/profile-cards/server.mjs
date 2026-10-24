@@ -22,8 +22,8 @@ export function readme(base, opts = {}) {
     return `<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="${url('dark')}">\n  <img src="${url('light')}" alt="${alt}" width="${width}">\n</picture>`;
   };
   return `<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/motion/hero-dark.gif">
-  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/motion/hero-light.gif" alt="okiso — ideas in motion. original character artwork on an animated artist's workbench; music, art, aether, backdrop and fleet" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/hero-dark.gif">
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/hero-light.gif" alt="OKISO — music, art & little tools. a liner-notes poster: a red spine strip reading OKISO, the last O of OKISO as a spinning red record with engawa110's chibi turning on it, taped artwork by suyosuyo and sobu, stickers by OTORIxxx and 7mmchan, and a ticker listing side A (backdrop, fleet, practice room) and side B (oki.so, aether in development)" width="900">
 </picture>
 
 <div align="center">
@@ -34,44 +34,35 @@ i make original music, collect art, and build little tools i want to use.
 
 **[my world ↗](https://oki.so)** · **[listen ↗](https://oki.so/releases)** · [discord](https://discord.com/users/274178934143451137) · [anilist](https://anilist.co/user/okiso)
 
-[backdrop · ai wallpapers](https://github.com/okisooo/backdrop) · [fleet · ai usage](https://github.com/okisooo/fleet) · [practice room · japanese practice](https://nihongo.okiso.net)
-
 <sub>[prefer less motion? view the still version](https://github.com/okisooo/okisooo/blob/main/README-static.md)</sub>
 
 </div>
 
-## music, art & my little world
-
-<p><a href="https://oki.so"><picture>
-  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/motion/world-motion-v1.gif" alt="oki.so — music, art and everything in between, with OTORIxxx's animated diary artwork and a bobbing red mascot" width="900">
-</picture></a></p>
-
-my home for original releases, commissioned artwork, and whatever i'm making next.
-
-**[listen to my music ↗](https://oki.so/releases)** · [wander through the art gallery](https://oki.so/gallery) · [website source](https://github.com/okisooo/site)
-
-<p><a href="https://oki.so/releases">${card('release', 'my latest music release', 900)}</a></p>
-
-## on my workbench
-
 <p><picture>
-  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/motion/aether-motion-v1.gif" alt="aether, in development — real arrangement, mixer and piano-roll stills from a synthetic session, with an animated cloud mascot" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/side-a-dark.svg">
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/side-a-light.svg" alt="side A — little tools" width="900">
 </picture></p>
 
-**aether** is my native windows music workstation, with shared controls for people and agents. **still in development.**
+<p><a href="https://github.com/okisooo/backdrop"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/track-backdrop-dark.svg">
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/track-backdrop-light.svg" alt="A1 backdrop — your own image or animated GIF behind Claude Desktop, Codex Desktop and T3 Code. for Windows." width="900">
+</picture></a></p>
 
-<sub>the preview cycles through cropped editor stills from a synthetic session; it isn't a live playback recording.</sub>
+<p><a href="https://github.com/okisooo/fleet"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/track-fleet-dark.svg">
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/track-fleet-light.svg" alt="A2 fleet — AI usage, quotas and reset times for Claude, Codex, Grok and more, in one Windows 11 tray app." width="900">
+</picture></a></p>
 
-## little tools for a nicer everyday
+<p><a href="https://github.com/okisooo/NihongoRevisionSuite"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/track-practice-dark.svg">
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/track-practice-light.svg" alt="A3 practice room — short Japanese practice rounds for reading, recall, handwriting and listening. a web app that works offline." width="900">
+</picture></a></p>
 
-| project | what it does | try it |
-| :--- | :--- | :--- |
-| **[backdrop ↗](https://github.com/okisooo/backdrop)** | your own images and animated wallpapers behind claude desktop, codex desktop, and t3 code. blur and contrast controls included. | **[windows download](https://github.com/okisooo/backdrop/releases/latest/download/Backdrop-win-x64.zip)** |
-| **[fleet ↗](https://github.com/okisooo/fleet)** | ai usage, quotas, and reset times in one windows tray app. | **[windows download](https://github.com/okisooo/fleet/releases/latest)** |
-| **[practice room ↗](https://github.com/okisooo/NihongoRevisionSuite)** | offline japanese practice for reading, handwriting, listening and recall. progress stays on your device. | **[open practice room](https://nihongo.okiso.net)** |
+<div align="center">
 
-also on my desk: [**OKICRAFT** — a Minecraft modpack with Create automation](https://github.com/okisooo/OKICRAFT).
+**[get backdrop for windows](https://github.com/okisooo/backdrop/releases/latest/download/Backdrop-win-x64.zip)** · **[get fleet for windows](https://github.com/okisooo/fleet/releases/latest)** · **[open practice room](https://nihongo.okiso.net)**
 
+</div>
 
 <details>
 <summary>watch backdrop in the real app ♡</summary>
@@ -84,7 +75,33 @@ also on my desk: [**OKICRAFT** — a Minecraft modpack with Create automation](h
 
 </details>
 
-## after hours
+<p><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/side-b-dark.svg">
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/side-b-light.svg" alt="side B — music & art" width="900">
+</picture></p>
+
+<p><a href="https://oki.so"><picture>
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/motion/world-motion-v1.gif" alt="oki.so — music, art and everything in between, with OTORIxxx's animated diary artwork and a bobbing red mascot" width="900">
+</picture></a></p>
+
+my home for original releases, commissioned artwork, and whatever i'm making next.
+
+**[listen to my music ↗](https://oki.so/releases)** · [wander through the art gallery](https://oki.so/gallery) · [website source](https://github.com/okisooo/site)
+
+<p><a href="https://oki.so/releases">${card('release', 'my latest music release', 900)}</a></p>
+
+<p><picture>
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/motion/aether-motion-v1.gif" alt="aether, in development — real arrangement, mixer and piano-roll stills from a synthetic session, with an animated cloud mascot" width="900">
+</picture></p>
+
+**aether** is my native windows music workstation, with shared controls for people and agents. **still in development.**
+
+<sub>the preview cycles through cropped editor stills from a synthetic session; it isn't a live playback recording.</sub>
+
+<p><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/side-hidden-dark.svg">
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/side-hidden-light.svg" alt="hidden track — after hours" width="900">
+</picture></p>
 
 <p align="center">
 <a href="https://discord.com/users/274178934143451137">${card('presence', 'my discord presence snapshot', '48%')}</a>
@@ -107,7 +124,10 @@ also on my desk: [**OKICRAFT** — a Minecraft modpack with Create automation](h
 
 </details>
 
-<br>
+<p><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/side-credits-dark.svg">
+  <img src="https://raw.githubusercontent.com/okisooo/okisooo/main/assets/profile/liner/side-credits-light.svg" alt="liner notes — artwork credits" width="900">
+</picture></p>
 
 <div align="center">
 
