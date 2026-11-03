@@ -11,6 +11,10 @@ const fontFiles = [
   ['Geist Mono', 400, '@fontsource/geist-mono/files/geist-mono-latin-400-normal.woff']
 ];
 const fonts = await Promise.all(fontFiles.map(async ([name, weight, location]) => ({ name, weight, style: 'normal', data: await readFile(new URL(import.meta.resolve(location))) })));
+// Bundle full CJK coverage: SVG paths must not depend on viewer-installed fonts.
+for (const [weight, file] of [[400, 'Regular'], [900, 'Black']]) {
+  fonts.push({ name: 'Noto Sans CJK JP', weight, style: 'normal', data: await readFile(join(root, 'fonts', `NotoSansCJKjp-${file}.otf`)) });
+}
 const assets = Object.fromEntries(await Promise.all(['sobu', 'suyosuyo', 'mascot'].map(async name => {
   const source = sharp(await readFile(join(root, 'assets', `${name}.webp`))).resize({ width: 420, height: 560, fit: 'inside', withoutEnlargement: true });
   const image = name === 'mascot' ? await source.png().toBuffer() : await source.jpeg({ quality: 90 }).toBuffer();
@@ -50,7 +54,7 @@ function dateLabel(source) {
 }
 
 function frame(width, height, p, children, style = {}) {
-  return div({ width, height, boxSizing: 'border-box', position: 'relative', padding: 28, gap: 18, fontFamily: 'Archivo', fontSize: 18, color: p.ink, background: p.paper, border: `1px solid ${p.edge}`, borderRadius: 10, overflow: 'hidden', ...style }, children);
+  return div({ width, height, boxSizing: 'border-box', position: 'relative', padding: 28, gap: 18, fontFamily: 'Archivo, Noto Sans CJK JP', fontSize: 18, color: p.ink, background: p.paper, border: `1px solid ${p.edge}`, borderRadius: 10, overflow: 'hidden', ...style }, children);
 }
 
 function section(title, subtitle, p, accent) {
@@ -126,7 +130,7 @@ export async function renderCard(name, snapshot, opts = {}) {
     ]);
   } else if (name === 'divider') {
     height = 100;
-    tree = div({ width, height, boxSizing: 'border-box', flexDirection: 'row', alignItems: 'center', gap: 14, fontFamily: 'Archivo', color: p.ink, background: p.paper, padding: '0 10px' },
+    tree = div({ width, height, boxSizing: 'border-box', flexDirection: 'row', alignItems: 'center', gap: 14, fontFamily: 'Archivo, Noto Sans CJK JP', color: p.ink, background: p.paper, padding: '0 10px' },
       div({ width: 9, height: 9, background: accent }), text(options.title, { fontSize: 26, fontWeight: 900, letterSpacing: -0.6 }), div({ flex: 1, height: 1, background: p.edge, marginLeft: 10 }), img(assets.mascot, 85, 85, { objectFit: 'contain' }));
   } else throw new Error('unknown card');
   return satori(tree, { width, height, fonts });

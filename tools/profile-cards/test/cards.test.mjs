@@ -67,3 +67,19 @@ test('HTTP supports conditional and HEAD requests, rejects mutation and bad opti
   const health = await (await fetch(`${base}/health`)).json();
   assert.equal(health.service, 'okiso-profile-cards');
 });
+
+// Equal-length CJK titles used to produce identical missing-glyph boxes.
+test('release and Spotify titles embed distinct CJK glyphs in both themes', async () => {
+  const title = String.fromCodePoint(0x51b7, 0x305f, 0x3044);
+  const alternate = String.fromCodePoint(0x6696, 0x304b, 0x3044);
+  for (const theme of ['light', 'dark']) for (const card of ['release', 'presence']) {
+    const snapshot = name => ({ sources: { [card]: { data: card === 'release'
+      ? { name, type: 'single', date: '2026-10-29' }
+      : { status: 'online', spotify: { name } } } } });
+    const actual = await renderCard(card, snapshot(title), { theme });
+    const other = await renderCard(card, snapshot(alternate), { theme });
+    assert.notEqual(actual, other, `${card} must render distinct title glyphs`);
+    assert.ok(!actual.includes('<text'), 'glyphs must be embedded for GitHub');
+    await sharp(Buffer.from(actual)).png().toBuffer();
+  }
+});

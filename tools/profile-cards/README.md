@@ -27,3 +27,5 @@ art: suyosuyo; sobu · @sobsocks; mascot by 7mmchan. artwork remains its creator
 on the vps, clone this profile repository to `/home/fedora/profile-cards`, then run `docker compose -f tools/profile-cards/compose.yml up -d --build`. it joins the existing Caddy network without publishing a new host port. Caddy's `profile.oki.so` route is tracked separately in okiso-stack. keep the persistent volume and preserve unrelated live server edits.
 
 the profile also keeps generated svg snapshots in `cards/`, refreshed by its own github workflow every six hours. these are fallback assets when the vps is offline. live hosted embeds are used by the main profile and can be customized and copied from the studio.
+
+CJK titles use bundled Noto Sans CJK JP fonts (regular and black), licensed under the SIL Open Font License in `fonts/LICENSE.txt`. Glyphs are embedded as SVG paths, so GitHub does not need local fonts.
