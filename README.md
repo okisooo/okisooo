@@ -66,8 +66,8 @@ my home for original releases, commissioned artwork, and whatever i'm making nex
 **[listen to my music ↗](https://oki.so/releases)** · [wander through the art gallery](https://oki.so/gallery) · [website source](https://github.com/okisooo/site)
 
 <p><a href="https://oki.so/releases"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/release.svg?theme=dark&accent=cc0000&v=4">
-  <img src="https://profile.oki.so/release.svg?theme=light&accent=cc0000&v=4" alt="my latest music release" width="900">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/release.svg?theme=dark&accent=cc0000&v=5">
+  <img src="https://profile.oki.so/release.svg?theme=light&accent=cc0000&v=5" alt="my latest music release" width="900">
 </picture></a></p>
 
 <p><picture>
@@ -85,8 +85,8 @@ my home for original releases, commissioned artwork, and whatever i'm making nex
 
 <p align="center">
 <a href="https://discord.com/users/274178934143451137"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/presence.svg?theme=dark&accent=cc0000&v=4">
-  <img src="https://profile.oki.so/presence.svg?theme=light&accent=cc0000&v=4" alt="my discord presence snapshot" width="48%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/presence.svg?theme=dark&accent=cc0000&v=5">
+  <img src="https://profile.oki.so/presence.svg?theme=light&accent=cc0000&v=5" alt="my discord presence snapshot" width="48%">
 </picture></a>
 <a href="https://osu.ppy.sh/users/oxo7"><picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://profile.oki.so/osu.svg?theme=dark&accent=cc0000&v=4">
